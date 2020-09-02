@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
-import WalletTarget from "../components/walletTarget"
+import WalletProgress from "../components/walletProgress"
 import Arrow from "../assets/arrow.svg"
 
 import { Button } from "../components/UI/index"
@@ -58,6 +58,14 @@ const Section = styled.section`
   }
 `
 
+const WalletProgressContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+`
+
 interface Props {}
 
 interface Wallet {
@@ -111,7 +119,9 @@ export default function Home({}: Props) {
             Activate now <Arrow />
           </Button>
         </Section>
-        <WalletTarget current={walletData.walletValue} target={walletData.walletTarget} />
+        <WalletProgressContainer>
+          <WalletProgress current={walletData.walletValue} target={walletData.walletTarget} />
+        </WalletProgressContainer>
       </WelcomePageContainer>
     </Layout>
   )

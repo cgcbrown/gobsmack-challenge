@@ -1,7 +1,8 @@
 export default {
   colors:{
     primary: 'rgb(215, 20, 64)',
-    text: '#333333'
+    text: '#333333',
+    green: '#36ED79'
   },
 
   mediaQueries: {
