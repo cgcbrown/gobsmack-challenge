@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "ProbaPro";
+  src: url("./ProbaPro/ProbaPro-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "ProbaPro";
+  src: url("./ProbaPro/ProbaPro-Bold.woff") format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "ProbaPro";
+  src: url("./ProbaPro/ProbaPro-ExtraLight.woff") format('woff');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "ProbaPro";
+  src: url("./ProbaPro/ProbaPro-Light.woff") format('woff');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "ProbaPro";
+  src: url("./ProbaPro/ProbaPro-LightItalic.woff") format('woff');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ProbaPro";
+  src: url("./ProbaPro/ProbaPro-Medium.woff") format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ProbaPro";
+  src: url("./ProbaPro/ProbaPro-SemiBold.woff") format('woff');
+  font-weight: 500;
+}
+
+
+
