@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.2",
+    "axios": "^0.20.0",
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.24.50",
     "gatsby-plugin-react-svg": "^3.0.0",

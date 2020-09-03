@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
+import {graphql} from "gatsby"
 import WalletProgress from "../components/walletProgress"
 import Arrow from "../assets/arrow.svg"
 
@@ -132,7 +133,11 @@ const WalletProgressContainer = styled.div`
   }
 `
 
-interface Props {}
+interface Props {
+  data: {
+    userWallet: Wallet;
+  }
+}
 
 interface Wallet {
   firstName: string
@@ -140,11 +145,11 @@ interface Wallet {
   walletValue: number
 }
 
-export default function Home({}: Props) {
+export default function Home({data}: Props) {
   const [walletData, setWalletData] = useState<Wallet>({
-    firstName: "Heather",
-    walletTarget: 500,
-    walletValue: 100,
+    firstName: data.userWallet.firstName,
+    walletTarget: data.userWallet.walletTarget,
+    walletValue: data.userWallet.walletValue,
   })
 
   return (
@@ -171,4 +176,14 @@ export default function Home({}: Props) {
       </WelcomePageContainer>
     </Layout>
   )
-}
+};
+
+export const query = graphql`
+  query MyQuery {
+    userWallet {
+      firstName
+      walletTarget
+      walletValue
+    }
+  }
+`
