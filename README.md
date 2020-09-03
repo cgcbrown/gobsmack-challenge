@@ -23,3 +23,5 @@ Seeing as Gobsmack use *Styled Components* I decided to learn and apply it to th
 ### What would I do next if I had to develop it further
 
 I would most likely design a better experience and UI for both the mobile and tablet designs. As they stand, they are functional but nothing special.
+
+Figure out and solve the typescript error I get from importing the SVG icons using *gatsby-plugin-react-svg*.
