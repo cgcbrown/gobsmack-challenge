@@ -11,8 +11,13 @@ const WalletTargetContainer = styled.div`
   background: ${({theme}) => theme.colors.primaryGradient};
   color: white;
   text-align: center;
-  height: 12rem;
-  width: 12rem;
+  height: 11rem;
+  width: 11rem;
+  transform: scale(0.7);
+
+  @media ${({theme}) => theme.mediaQueries.laptopL} {
+    transform: scale(1);
+  }
 
   @media ${({theme}) => theme.mediaQueries.largest} {
     transform: scale(1.2);

@@ -7,7 +7,7 @@ export default {
   },
 
   mediaQueries: {
-    Largest: "only screen and (min-width: 2400px)",
+    largest: "only screen and (min-width: 2400px)",
     laptopXL: "only screen and (min-width: 1900px)",
     laptopL: "only screen and (min-width: 1440px)",
     laptop: "only screen and (min-width: 1024px)",

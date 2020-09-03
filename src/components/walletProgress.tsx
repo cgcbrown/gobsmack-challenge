@@ -19,9 +19,13 @@ const ProgressBar = styled.div<{progress: number, barWidth: number}>`
   justify-content: center;
   border-bottom: 0;
   box-sizing: border-box;
-  border-radius: 50%/100% 100% 0 0;
+  border-radius: 100% 100% 0 0;
   transform: scale(1.05);
   overflow: hidden;
+
+  @media ${({theme}) => theme.mediaQueries.tablet} {
+    border-radius: 50%/100% 100% 0 0;
+  }
 
   &:after {
     content: "";
@@ -34,7 +38,10 @@ const ProgressBar = styled.div<{progress: number, barWidth: number}>`
     left: 0;
     border-bottom: 0;
     box-sizing: border-box;
-    border-radius: 50%/100% 100% 0 0;
+    border-radius: 100% 100% 0 0;
+    @media ${({theme}) => theme.mediaQueries.tablet} {
+      border-radius: 50%/100% 100% 0 0;
+    }
   }
 
   &:before {

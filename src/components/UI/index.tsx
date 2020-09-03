@@ -5,13 +5,28 @@ export const Button = styled.button`
   color: white;
   border-radius: 100px;
   border: none;
-  padding: 1rem 5rem;
+  width: 100%;
   font-size: 1rem;
-  font-weight: bold;
-  letter-spacing: 0.1rem;
+  padding: 1rem 0;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
 
-  @media ${({theme}) => theme.mediaQueries.largest} {
-    font-size: 1.5rem;
-    padding: 1.5rem 7.5rem;
+  @media ${({theme}) => theme.mediaQueries.tablet} {
+    padding: 1rem 5rem;
+    width: auto;
+  }
+
+  @media ${({theme}) => theme.mediaQueries.laptopL} {
+    font-size: 1.3rem;
+    padding: 1.2rem 7rem;
+  }
+
+  @media ${({theme}) => theme.mediaQueries.laptopXL} {
+    font-size: 1.4rem;
+    padding: 1.4rem 7.5rem;
   }
 `
