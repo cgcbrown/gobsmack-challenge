@@ -8,26 +8,42 @@ const WalletTargetContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   border-radius: 100px;
-  background-color: ${({theme}) => theme.colors.primary};
+  background: ${({theme}) => theme.colors.primaryGradient};
   color: white;
   text-align: center;
   height: 12rem;
   width: 12rem;
-  font-size: 1rem;
-`
 
-const HighlightedNumber = styled.span`
-  font-size: 3rem;
+  @media ${({theme}) => theme.mediaQueries.largest} {
+    transform: scale(1.2);
+  }
 `
 
 const Current = styled.p`
-  margin: 0;
+  font-size: 40px;
   color: white;
+  transform: translateY(10px);
+  margin: 0;
+`
+
+const Decimals = styled.p`
+  font-size: 20px;
+  color: white;
+  margin: 0;
+  font-weight: 200;
+`
+
+const CurrentContainer = styled.div`
+  display: inline-flex;
+  align-items: flex-end;
+  margin-bottom: 0.5rem;
 `
 
 const Goal = styled.p`
   margin: 0;
+  font-size: 18px;
   color: white;
+  font-weight: bold;
 `
 
 interface Props {
@@ -38,12 +54,12 @@ interface Props {
 export default ({current, target}:Props) => {
   return (
     <WalletTargetContainer>
-      <Wallet />
-      <Current>
-        <HighlightedNumber>£{current.toFixed(2).slice(0, -3)}</HighlightedNumber>
-        {current.toFixed(2).slice(-3)}
-      </Current>
-      <Goal>Goal: £{target.toFixed(2)}</Goal>
+      <Wallet width={50} height={40}  />
+      <CurrentContainer>
+        <Current>£{current.toFixed(2).slice(0, -3)}</Current>
+        <Decimals>{current.toFixed(2).slice(-3)}</Decimals>
+      </CurrentContainer>
+      <Goal>Goal: £{target}</Goal>
     </WalletTargetContainer>
   )
 }

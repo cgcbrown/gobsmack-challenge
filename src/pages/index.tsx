@@ -10,32 +10,51 @@ const WelcomePageContainer = styled.div`
   position: relative;
   overflow: hidden;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  color: ${({theme}) => theme.colors.text};
+  @media ${({theme}) => theme.mediaQueries.laptopL} {
+    max-height: 1200px;
+  }
 `
 
 const HeroImage = styled.img`
   position: absolute;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 100%;
   z-index: -10;
 
   @media ${({theme}) => theme.mediaQueries.laptopL} {
     transform: translateX(25%);
   }
+
+  @media ${({theme}) => theme.mediaQueries.largest} {
+    transform: translateX(10%);
+  }
 `
 
 const WelcomeMessage = styled.h4`
   text-transform: uppercase;
+  @media ${({theme}) => theme.mediaQueries.largest} {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
 `
 
 const HeroText = styled.h1`
   font-size: 2.5rem;
   margin-top: 0;
+  margin-bottom: 1.6rem;
+  line-height: 72pt;
 
   @media ${({theme}) => theme.mediaQueries.tablet} {
-    font-size: 4rem;
-    max-width: 55%;
+
+  }
+
+  @media ${({theme}) => theme.mediaQueries.laptopL} {
+    font-size: 5.5rem;
+    max-width: 70%;
+    margin-bottom: 2rem;
   }
 `
 
@@ -44,6 +63,7 @@ const Section = styled.section`
   padding: 4rem 2rem;
   width: 100%;
   max-width: 800px;
+  z-index: 10;
 
   @media ${({theme}) => theme.mediaQueries.tablet} {
     max-width: 720px;
@@ -55,6 +75,28 @@ const Section = styled.section`
 
   @media ${({theme}) => theme.mediaQueries.laptopL} {
     max-width: 1320px;
+    padding: 7rem 2rem;
+  }
+
+  @media ${({theme}) => theme.mediaQueries.largest} {
+    max-width: 1400px;
+    padding: 7rem 2rem;
+  }
+`
+
+const Paragraph = styled.section`
+  line-height: 26pt;
+  margin-bottom: 1.6rem;
+
+  @media ${({theme}) => theme.mediaQueries.laptopL} {
+    max-width: 42%;
+    font-size: 1.2rem;
+  }
+
+  @media ${({theme}) => theme.mediaQueries.largest} {
+    max-width: 50%;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
   }
 `
 
@@ -64,6 +106,10 @@ const WalletProgressContainer = styled.div`
   left: 0;
   right: 0;
   height: 120px;
+
+  @media ${({theme}) => theme.mediaQueries.largest} {
+    height: 150px;
+  }
 `
 
 interface Props {}
@@ -77,8 +123,8 @@ interface Wallet {
 export default function Home({}: Props) {
   const [walletData, setWalletData] = useState<Wallet>({
     firstName: "Heather",
-    walletTarget: 300,
-    walletValue: 100.1,
+    walletTarget: 500,
+    walletValue: 400,
   })
 
   useEffect(() => {
@@ -111,12 +157,12 @@ export default function Home({}: Props) {
         <Section>
           <WelcomeMessage>Welcome {walletData.firstName}</WelcomeMessage>
           <HeroText>More cash in your wallet from everyday shopping</HeroText>
-          <p>
+          <Paragraph>
             Shop for things you’d buy anyway with over 3,000 brands – online and in
             store – and watch the cash stack up in your wallet.
-          </p>
+          </Paragraph>
           <Button>
-            Activate now <Arrow />
+            Activate now <Arrow width={12} height={18} style={{margin: '0 0 -1px 4px'}} />
           </Button>
         </Section>
         <WalletProgressContainer>

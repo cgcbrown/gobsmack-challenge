@@ -14,13 +14,13 @@ const WalletTargetContainer = styled.div`
 const ProgressBar = styled.div<{progress: number, barWidth: number}>`
   position: relative;
   height: 100%;
-  background-color: darkgrey;
+  background-color: #D5D6D8;
   display: flex;
   justify-content: center;
   border-bottom: 0;
   box-sizing: border-box;
   border-radius: 50%/100% 100% 0 0;
-  transform: scale(1.1);
+  transform: scale(1.05);
   overflow: hidden;
 
   &:after {
@@ -53,7 +53,7 @@ const WalletProgress = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 11;
+  z-index: -5;
   height: 100%;
 ` 
 
