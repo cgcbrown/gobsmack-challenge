@@ -11,5 +11,5 @@
     "noUnusedLocals": false,
     "allowJs": true
   },
-  "exclude": ["node_modules", "public", ".cache", "assets"]
+  "exclude": ["node_modules", "public", ".cache"]
 }

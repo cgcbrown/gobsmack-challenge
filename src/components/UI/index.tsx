@@ -1,4 +1,13 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+
+export const ShadowPulse = keyframes`
+  0% {
+    box-shadow: 0 0 0 0px rgb(215, 20, 64, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgb(215, 20, 64, 0);
+  }
+`
 
 export const Button = styled.button`
   background-color: ${({theme}) => theme.colors.primary};
@@ -14,6 +23,7 @@ export const Button = styled.button`
   flex-direction: row;
   align-items: baseline;
   justify-content: center;
+  cursor: pointer;
 
   @media ${({theme}) => theme.mediaQueries.tablet} {
     padding: 1rem 5rem;
@@ -28,5 +38,29 @@ export const Button = styled.button`
   @media ${({theme}) => theme.mediaQueries.laptopXL} {
     font-size: 1.4rem;
     padding: 1.4rem 7.5rem;
+  }
+
+  &:hover {
+    animation: 1200ms ${ShadowPulse} infinite;
+  }
+`
+
+export const Section = styled.section`
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media ${({theme}) => theme.mediaQueries.laptop} {
+    max-width: 1024px;
+  }
+
+  @media ${({theme}) => theme.mediaQueries.laptopL} {
+    max-width: 1320px;
+    padding: 5rem 2rem;
+  }
+
+  @media ${({theme}) => theme.mediaQueries.laptopXL} {
+    max-width: 1400px;
   }
 `

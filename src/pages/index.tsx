@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import WalletProgress from "../components/walletProgress"
 import Arrow from "../assets/arrow.svg"
 
-import { Button } from "../components/UI/index"
+import { Button, Section } from "../components/UI/index"
 
 const WelcomePageContainer = styled.div`
   position: relative;
@@ -26,12 +26,16 @@ const HeroImage = styled.img`
 
   @media ${({theme}) => theme.mediaQueries.tablet} {
     display: block;
-    transform: translateX(-25%);
+    transform: translateX(-30%);
     position: absolute;
     top: 0;
     left: 50%;
     height: 100%;
     z-index: -10;
+  }
+
+  @media ${({theme}) => theme.mediaQueries.laptop} {
+    transform: translateX(-25%);
   }
 
   @media ${({theme}) => theme.mediaQueries.largest} {
@@ -41,9 +45,9 @@ const HeroImage = styled.img`
 
 const WelcomeMessage = styled.h4`
   text-transform: uppercase;
+  margin-bottom: 1rem;
 
   @media ${({theme}) => theme.mediaQueries.tablet} {
-    margin-bottom: 1rem;
     font-size: 1.2rem;
   }
 
@@ -59,15 +63,16 @@ const HeroText = styled.h1`
   max-width: 100%;
 
   @media ${({theme}) => theme.mediaQueries.tablet} {
+    font-size: 3rem;
     max-width: 60%;
   }
 
   @media ${({theme}) => theme.mediaQueries.laptop} {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   @media ${({theme}) => theme.mediaQueries.laptopL} {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 
   @media ${({theme}) => theme.mediaQueries.laptopXL} {
@@ -76,40 +81,10 @@ const HeroText = styled.h1`
     line-height: 72pt;
     margin-bottom: 2rem;
   }
-
-  @media ${({theme}) => theme.mediaQueries.largest} {
-    font-size: 5.5rem;
-  }
-`
-
-const Section = styled.section`
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  width: 100%;
-  z-index: 10;
-  box-sizing: border-box;
-
-  @media ${({theme}) => theme.mediaQueries.tablet} {
-    max-width: 720px;
-  }
-
-  @media ${({theme}) => theme.mediaQueries.laptop} {
-    max-width: 960px;
-  }
-
-  @media ${({theme}) => theme.mediaQueries.laptopL} {
-    max-width: 1320px;
-    padding: 5rem 2rem;
-  }
-
-  @media ${({theme}) => theme.mediaQueries.laptopXL} {
-    max-width: 1400px;
-    padding: 6rem 2rem;
-  }
 `
 
 const Paragraph = styled.section`
-  line-height: 26pt;
+  line-height: 18pt;
   margin-bottom: 1.6rem;
 
   @media ${({theme}) => theme.mediaQueries.tablet} {
@@ -118,12 +93,14 @@ const Paragraph = styled.section`
   }
 
   @media ${({theme}) => theme.mediaQueries.laptopL} {
+    line-height: 26pt;
     max-width: 42%;
     font-size: 1.5rem;
     margin-bottom: 2.5rem;
   }
 
-  @media ${({theme}) => theme.mediaQueries.largest} {
+  @media ${({theme}) => theme.mediaQueries.laptopXL} {
+    margin-bottom: 3rem;
     max-width: 50%;
   }
 `
@@ -142,11 +119,15 @@ const WalletProgressContainer = styled.div`
   height: 100px;
   padding-top: 4rem;
 
+  @media ${({theme}) => theme.mediaQueries.tablet} {
+    padding-top: 1rem;
+  }
+
   @media ${({theme}) => theme.mediaQueries.laptopL} {
     height: 120px;
   }
 
-  @media ${({theme}) => theme.mediaQueries.largest} {
+  @media ${({theme}) => theme.mediaQueries.laptopXL} {
     height: 150px;
   }
 `
@@ -165,29 +146,6 @@ export default function Home({}: Props) {
     walletTarget: 500,
     walletValue: 100,
   })
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  const fetchData = () => {
-    // fetch("http://buildingbrands.co/react-test/wallet.json")
-    //   .then(response => {
-    //     if (!response.ok) {
-    //       throw new Error("Network response was not ok")
-    //     }
-    //     return response.json()
-    //   })
-    //   .then(json => {
-    //     setWalletData(json)
-    //   })
-    //   .catch(error => {
-    //     console.error(
-    //       "There has been a problem with your fetch operation:",
-    //       error
-    //     )
-    //   })
-  }
 
   return (
     <Layout>
