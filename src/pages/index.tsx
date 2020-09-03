@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import {graphql} from "gatsby"
@@ -95,7 +95,6 @@ const Paragraph = styled.section`
 
   @media ${({theme}) => theme.mediaQueries.laptopL} {
     line-height: 26pt;
-    max-width: 42%;
     font-size: 1.5rem;
     margin-bottom: 2.5rem;
   }

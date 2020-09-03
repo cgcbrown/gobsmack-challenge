@@ -13,7 +13,7 @@ const WalletTargetContainer = styled.div`
   text-align: center;
   height: 11rem;
   width: 11rem;
-  transform: scale(0.7);
+  transform: scale(0.8);
 
   @media ${({theme}) => theme.mediaQueries.laptopL} {
     transform: scale(1);
